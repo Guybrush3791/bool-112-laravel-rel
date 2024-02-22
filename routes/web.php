@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
-    return view('pages.index');
-});
+Route :: get('/', [UserController :: class, 'index'])
+    -> name('user.index');
+
+Route :: get('/posts', [PostController :: class, 'index'])
+    -> name('post.index');
