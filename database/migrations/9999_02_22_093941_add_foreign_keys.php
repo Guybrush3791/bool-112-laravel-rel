@@ -21,6 +21,11 @@ return new class extends Migration
 
             $table->foreignId('user_id')->constrained();
         });
+        Schema::table('post_tag', function (Blueprint $table) {
+
+            $table->foreignId('post_id')->constrained();
+            $table->foreignId('tag_id')->constrained();
+        });
     }
 
     /**
@@ -39,6 +44,15 @@ return new class extends Migration
 
             $table->dropForeign('posts_user_id_foreign');
             $table->dropColumn('user_id');
+        });
+
+        Schema::table('post_tag', function (Blueprint $table) {
+
+            $table->dropForeign('post_tag_post_id_foreign');
+            $table->dropColumn('post_id');
+
+            $table->dropForeign('post_tag_tag_id_foreign');
+            $table->dropColumn('tag_id');
         });
     }
 };

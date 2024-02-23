@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this -> call([
             UserTableSeeder :: class,
             PostTableSeeder :: class,
-            UserDetailTableSeeder :: class
+            UserDetailTableSeeder :: class,
+            TagTableSeeder :: class
         ]);
     }
 }

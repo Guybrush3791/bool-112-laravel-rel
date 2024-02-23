@@ -15,6 +15,4 @@ class UserController extends Controller
 
         return view('pages.index', compact('users'));
     }
-
-
 }
